@@ -1,0 +1,3 @@
+[submodule "src/main/kotlin/bedbrains/shared/datatypes"]
+	path = src/main/kotlin/bedbrains/shared/datatypes
+	url = https://bitbucket.org/bedbrains/datatypes
