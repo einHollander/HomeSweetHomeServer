@@ -9,23 +9,7 @@ import java.time.format.TextStyle
 import java.time.temporal.WeekFields
 import java.util.*
 
-object Tools {
-
-    fun clamp(value: Int, min: Int, max: Int): Int {
-        return when {
-            value < min -> min
-            value > max -> max
-            else -> value
-        }
-    }
-
-    fun clamp(value: Double, min: Double, max: Double): Double {
-        return when {
-            value < min -> min
-            value > max -> max
-            else -> value
-        }
-    }
+object Time {
 
     fun formatTime(hour: Int, minute: Int, locale: Locale): String {
         val dtf = DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT)
@@ -66,3 +50,4 @@ object Tools {
         return firstDayOfWeek.value
     }
 }
+
