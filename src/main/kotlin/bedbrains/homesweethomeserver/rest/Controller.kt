@@ -1,6 +1,6 @@
 package bedbrains.homesweethomeserver.rest
 
-import bedbrains.shared.datatypes.celsius
+import bedbrains.shared.datatypes.temperature.celsius
 import bedbrains.shared.datatypes.devices.Device
 import bedbrains.shared.datatypes.devices.Heating
 import bedbrains.shared.datatypes.devices.Light
@@ -29,7 +29,7 @@ class Controller {
 
     @PostMapping("device")
     fun device(@RequestBody json: Device.JSON) {
-        val device = json.toDevice()!!
+        val device = json.toDevice()
         devices.upsert(device) { it.uid == device.uid }
     }
 
