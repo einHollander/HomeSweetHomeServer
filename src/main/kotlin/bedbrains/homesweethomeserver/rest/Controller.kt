@@ -1,5 +1,6 @@
 package bedbrains.homesweethomeserver.rest
 
+import bedbrains.platform.UIDProvider
 import bedbrains.shared.datatypes.devices.Device
 import bedbrains.shared.datatypes.devices.Heating
 import bedbrains.shared.datatypes.devices.Light
@@ -12,16 +13,16 @@ import org.springframework.web.bind.annotation.*
 class Controller {
 
     val devices = mutableListOf<Device>(
-            Heating("9999", "Keller", "Heizung", 22.celsius, 20.celsius),
-            Light("9998", "Keller", "Decke", true)
+            Heating(UIDProvider.newUID, "Keller", "Heizung", 22.celsius, 20.celsius),
+            Light(UIDProvider.newUID, "Keller", "Decke", true)
     )
     val rules = mutableListOf<Rule>(
-            WeeklyRule("10000", "Normal").apply { timeSpans.add(WeeklyTimeSpan(WeeklyTime.now, WeeklyTime.MAX)) },
-            WeeklyRule("10001", "Ferien")
+            WeeklyRule(UIDProvider.newUID, "Normal").apply { timeSpans.add(WeeklyTimeSpan(WeeklyTime.now, WeeklyTime.MAX)) },
+            WeeklyRule(UIDProvider.newUID, "Ferien")
     )
     val values = mutableListOf<RuleValue>(
-            RuleValue("10002", "Default", 22.celsius, true),
-            RuleValue("10003", "Winter", 23.celsius, true)
+            RuleValue(UIDProvider.newUID, "Default", 22.celsius, true),
+            RuleValue(UIDProvider.newUID, "Winter", 23.celsius, true)
     )
 
     @GetMapping("/v1/devices")
