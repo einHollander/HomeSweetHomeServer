@@ -1,3 +1,4 @@
 [submodule "src/main/kotlin/bedbrains/shared/datatypes"]
 	path = src/main/kotlin/bedbrains/shared/datatypes
-	url = https://bitbucket.org/bedbrains/datatypes
+	url = https://github.com/Saecki/datatypes.git
+	branch = master
