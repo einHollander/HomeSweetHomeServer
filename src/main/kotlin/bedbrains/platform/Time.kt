@@ -1,6 +1,6 @@
 package bedbrains.platform
 
-import bedbrains.shared.datatypes.rules.WeeklyTime
+import bedbrains.shared.datatypes.time.WeeklyTime
 import java.time.LocalDateTime
 import java.time.LocalTime
 import java.time.format.DateTimeFormatter
