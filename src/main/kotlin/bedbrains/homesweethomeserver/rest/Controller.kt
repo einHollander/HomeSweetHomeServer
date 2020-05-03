@@ -4,7 +4,9 @@ import bedbrains.platform.UIDProvider
 import bedbrains.shared.datatypes.devices.Device
 import bedbrains.shared.datatypes.devices.Heating
 import bedbrains.shared.datatypes.devices.Light
-import bedbrains.shared.datatypes.rules.*
+import bedbrains.shared.datatypes.rules.Rule
+import bedbrains.shared.datatypes.rules.RuleValue
+import bedbrains.shared.datatypes.rules.WeeklyRule
 import bedbrains.shared.datatypes.temperature.celsius
 import bedbrains.shared.datatypes.time.WeeklyTime
 import bedbrains.shared.datatypes.time.WeeklyTimeSpan
@@ -15,8 +17,8 @@ import org.springframework.web.bind.annotation.*
 class Controller {
 
     val devices = mutableListOf<Device>(
-        Heating(UIDProvider.newUID, "Keller", "Heizung", 22.celsius, 20.celsius),
-        Light(UIDProvider.newUID, "Keller", "Decke", true)
+        Heating(UIDProvider.newUID, "Keller", "Heizung", 22.celsius, 20.celsius).apply { tags = listOf("Nice", "Yeet", "Amazing", "Cool", "But why?", "Hello there", "Maaaan") },
+        Light(UIDProvider.newUID, "Keller", "Decke", true).apply { tags = listOf("Nice", "Yeet", "Amazing", "Cool", "But why?", "Hello there", "Maaaan") }
     )
     val rules = mutableListOf<Rule>(
         WeeklyRule(UIDProvider.newUID, "Normal").apply { timeSpans.add(WeeklyTimeSpan(WeeklyTime.now, WeeklyTime.MAX)) },
