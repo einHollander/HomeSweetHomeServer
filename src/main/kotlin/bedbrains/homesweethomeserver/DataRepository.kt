@@ -30,6 +30,9 @@ object DataRepository {
     )
 
     init {
-        (devices[0] as Heating).targetTemp = 24.celsius
+        (devices[0] as Heating).apply {
+            targetTemp = 24.celsius
+            rule = rules[0]
+        }
     }
 }
