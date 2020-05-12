@@ -19,11 +19,15 @@ class Controller {
     @PutMapping("/v1/devices/device")
     fun putDevice(@RequestBody device: Device) = DataRepository.devices.update(device) { it.uid == device.uid }
 
+
     @GetMapping("/v1/rules")
     fun rules() = DataRepository.rules
 
     @GetMapping("/v1/rules/{uid}")
     fun rule(@PathVariable(name = "uid") uid: String) = DataRepository.rules.find { it.uid == uid }
+
+    @PutMapping("/v1/rules/rule")
+    fun putRule(@RequestBody rule: Rule) = DataRepository.rules.update(rule) { it.uid == rule.uid }
 
     @PostMapping("/v1/rules/rule")
     fun postRule(@RequestBody rule: Rule) = DataRepository.rules.upsert(rule) { it.uid == rule.uid }
@@ -31,11 +35,15 @@ class Controller {
     @DeleteMapping("/v1/rules/{uid}")
     fun deleteRule(@PathVariable(name = "uid") uid: String) = DataRepository.rules.removeIf { it.uid == uid }
 
+
     @GetMapping("/v1/values")
     fun values() = DataRepository.values
 
     @GetMapping("/v1/values/{uid}")
     fun value(@PathVariable(name = "uid") uid: String) = DataRepository.values.find { it.uid == uid }
+
+    @PutMapping("/v1/values/value")
+    fun putValue(@RequestBody value: RuleValue) = DataRepository.values.update(value) { it.uid == value.uid }
 
     @PostMapping("/v1/values/value")
     fun postValue(@RequestBody value: RuleValue) = DataRepository.values.upsert(value) { it.uid == value.uid }
