@@ -4,7 +4,6 @@ import bedbrains.platform.UIDProvider
 import com.hivemq.client.mqtt.datatypes.MqttQos
 import com.hivemq.client.mqtt.mqtt5.Mqtt5AsyncClient
 import com.hivemq.client.mqtt.mqtt5.Mqtt5Client
-import org.apache.tomcat.jni.Socket.send
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
@@ -27,12 +26,10 @@ fun main(args: Array<String>) {
     client.subscribeWith()
             .topicFilter("test")
             .qos(MqttQos.EXACTLY_ONCE)
-            .callback {
-                println(it.contentType)
-                println(it)
+            .callback{
+                println("Received " +  String(it.payloadAsBytes) + " from " + it.topic)
             }
             .send()
-
 
     //ToDo: Remove print statement
     println("setup done ;)")
