@@ -13,20 +13,20 @@ import bedbrains.shared.datatypes.time.WeeklyTimeSpan
 
 object DataRepository {
     val devices: MutableList<Device> = mutableListOf(
-        Heating(UIDProvider.newUID, "Keller", "Heizung", 22.celsius).apply {
-            tags = mutableSetOf("Nice", "Yeet", "Amazing", "Cool", "But why?", "Hello there", "Maaaan")
-        },
-        Light(UIDProvider.newUID, "Keller", "Decke").apply {
-            tags = mutableSetOf("Nice", "Yeet", "Amazing", "Cool", "But why?", "Hello there", "Maaaan")
-        }
+            Heating(UIDProvider.newUID, "Keller", "Heizung", 22.celsius).apply {
+                tags = mutableSetOf("Nice", "Yeet", "Amazing", "Cool", "But why?", "Hello there", "Maaaan")
+            },
+            Light(UIDProvider.newUID, "Keller", "Decke").apply {
+                tags = mutableSetOf("Nice", "Yeet", "Amazing", "Cool", "But why?", "Hello there", "Maaaan")
+            }
     )
     val rules: MutableList<Rule> = mutableListOf(
-        WeeklyRule(UIDProvider.newUID, "Normal").apply { timeSpans.add(WeeklyTimeSpan(WeeklyTime.now, WeeklyTime.MAX)) },
-        WeeklyRule(UIDProvider.newUID, "Ferien")
+            WeeklyRule(UIDProvider.newUID, "Normal").apply { timeSpans.add(WeeklyTimeSpan(WeeklyTime.now, WeeklyTime.MAX)) },
+            WeeklyRule(UIDProvider.newUID, "Ferien")
     )
     val values: MutableList<RuleValue> = mutableListOf(
-        RuleValue(UIDProvider.newUID, "Default", 22.celsius, true),
-        RuleValue(UIDProvider.newUID, "Winter", 23.celsius, true)
+            RuleValue(UIDProvider.newUID, "Default", 22.celsius, true),
+            RuleValue(UIDProvider.newUID, "Winter", 23.celsius, true)
     )
 
     init {
