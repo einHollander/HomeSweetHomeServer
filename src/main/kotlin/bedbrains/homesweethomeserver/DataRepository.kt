@@ -8,6 +8,7 @@ import bedbrains.shared.datatypes.rules.Rule
 import bedbrains.shared.datatypes.rules.RuleValue
 import bedbrains.shared.datatypes.rules.WeeklyRule
 import bedbrains.shared.datatypes.temperature.celsius
+import bedbrains.shared.datatypes.temperature.fahrenheit
 import bedbrains.shared.datatypes.time.WeeklyTime
 import bedbrains.shared.datatypes.time.WeeklyTimeSpan
 
